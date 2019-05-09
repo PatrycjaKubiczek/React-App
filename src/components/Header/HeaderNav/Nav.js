@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBNavbar, MDBNavbarBrand, NavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBContainer }
+import { MDBIcon, MDBNavbar, MDBNavbarBrand, NavbarNav, MDBNavItem, MDBNavbarToggler, MDBCollapse, MDBContainer }
 from 'mdbreact';
 import logo from '../../../assets/img/logo.png';
 import './Nav.scss';
@@ -17,11 +17,12 @@ render() {
   return (
     <MDBContainer>
       <MDBNavbar color="lighten-4" style={{ boxShadow: 'none', padding: '0'}} light>
-        <MDBContainer style={{justifyContent: 'left', paddingLeft: '0'}}>
-        <MDBNavbarToggler onClick={this.toggleCollapse('navbarCollapse1')} style={{paddingLeft: '0'}}/>
+        <MDBContainer style={{ paddingLeft: '0'}}>
+        <MDBNavbarBrand > 
+        <MDBNavbarToggler  style={{paddingLeft: '0'}}/>
           
-          <MDBNavbarBrand > 
-           <img src={logo} alt="logo" style={{ height: '30px' }}/>
+          
+           <img src={logo} alt="logo" style={{ height: '30px'}}/>
           </MDBNavbarBrand>
           <MDBCollapse id="navbarCollapse1" isOpen={this.state.collapseID} navbar >
             <NavbarNav left>
@@ -34,6 +35,7 @@ render() {
                Profile</MDBNavItem>
             </NavbarNav>
           </MDBCollapse>
+          <MDBIcon icon="search" className="text-right"/>
         </MDBContainer>
       </MDBNavbar>
     </MDBContainer>
